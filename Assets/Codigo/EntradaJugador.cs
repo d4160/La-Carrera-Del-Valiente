@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EntradaJugador : MonoBehaviour
 {
-    public Movimiento mov;
+    public Movimiento movimiento;
 
     void Update()
     {
-        mov.direccion = LeerTeclado();
+        movimiento.direccion = LeerTeclado();
     }
 
     Vector2 LeerTeclado()

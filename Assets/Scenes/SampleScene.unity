@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 0
@@ -132,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 170480905}
   - component: {fileID: 170480904}
-  - component: {fileID: 170480903}
   - component: {fileID: 170480908}
   - component: {fileID: 170480907}
   - component: {fileID: 170480906}
@@ -143,19 +139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &170480903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170480901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88c51ace1171c56449fea79704646e0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nombre: Mario
 --- !u!212 &170480904
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -173,6 +156,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -236,7 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movimiento: {fileID: 170480907}
-  rapidez: 5
 --- !u!114 &170480907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,8 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rapidez: 5.5
   direccion: {x: 0, y: 0}
-  esteEnemigo: {fileID: 170480908}
-  personaje: {fileID: 1781411857}
+  enemigoRef: {fileID: 170480908}
 --- !u!114 &170480908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,8 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857acf4cac735074782b3b5bd27ef51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombre: 
+  nombre: Esqueletico Normal
   color: {r: 1, g: 0, b: 0, a: 1}
+  personajeObjetivo: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rapidez: 5.5
-  direccion: {x: 0.42, y: 0}
+  direccion: {x: 0, y: 0}
 --- !u!114 &1781411857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,6 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombre: Mario
+  color: {r: 0.2924527, g: 0.45893425, b: 1, a: 1}
 --- !u!212 &1781411858
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -423,6 +409,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -485,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608c57994178a4849a55534e52e8bea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mov: {fileID: 1781411856}
+  movimiento: {fileID: 1781411856}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
