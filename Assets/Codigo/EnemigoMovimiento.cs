@@ -5,6 +5,5 @@ using UnityEngine;
 // Movimiento de enemigos
 public class EnemigoMovimiento : Movimiento
 {
-    public Enemigo esteEnemigo;
-    public Personaje personaje; // Que voy a perseguir
+    public Enemigo enemigoRef; // Referencia a este enemigo
 }

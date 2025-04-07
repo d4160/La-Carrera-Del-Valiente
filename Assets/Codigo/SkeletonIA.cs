@@ -5,16 +5,20 @@ using UnityEngine;
 public class SkeletonIA : MonoBehaviour
 {
     public EnemigoMovimiento movimiento;
-    public float rapidez;
 
 
     void Update()
     {
-        Vector3 direccionHaciaJugador = movimiento.personaje.transform.position - movimiento.esteEnemigo.transform.position;
-        Vector2 direccionMagnitud1 = direccionHaciaJugador.normalized;
+        if (movimiento.enemigoRef.personajeObjetivo != null)
+        {
+            Vector3 direccionHaciaJugador = movimiento.enemigoRef.personajeObjetivo.transform.position - movimiento.enemigoRef.transform.position;
+            Vector2 direccionHaciaJugadorNormalizado = direccionHaciaJugador.normalized; // Magnitud 1
 
-        Vector3 desplazaiento = direccionMagnitud1 * rapidez * Time.deltaTime;
-
-        transform.position = transform.position + desplazaiento;
+            movimiento.direccion = direccionHaciaJugadorNormalizado;
+        }
+        else
+        {
+            movimiento.direccion = Vector2.zero;
+        }
     }
 }
