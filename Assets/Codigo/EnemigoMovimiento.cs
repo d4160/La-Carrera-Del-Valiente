@@ -5,5 +5,5 @@ using UnityEngine;
 // Movimiento de enemigos
 public class EnemigoMovimiento : Movimiento
 {
-    public Enemigo enemigoRef; // Referencia a este enemigo
+    public Enemigo EnemigoRef => personajeRef as Enemigo;
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class Personaje : MonoBehaviour
+public class Personaje : Entity
 {
     public string nombre;
     public Color color;

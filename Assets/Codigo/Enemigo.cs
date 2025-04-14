@@ -6,8 +6,9 @@ public class Enemigo : Personaje
 {
     public Personaje personajeObjetivo; // Puede ser nulo
     public EnemigoMovimiento movimientoRef;
-    public MaquinaDeEstados enemigoMaquina;
 
+    // State Machine y Estados
+    public StateMachine enemigoMaquina;
     public EnemigoPersiguiendo estadoPersiguiendo;
 
     // Defino valores iniciales
@@ -15,6 +16,6 @@ public class Enemigo : Personaje
     {
         estadoPersiguiendo = new EnemigoPersiguiendo(movimientoRef);
 
-        enemigoMaquina.CambiarEstado(estadoPersiguiendo);
+        enemigoMaquina.ChangeToState(estadoPersiguiendo);
     }
 }

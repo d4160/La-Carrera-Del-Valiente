@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class EnemigoReposo : Estado
+public class EnemigoReposo : State
 {
-    public override void EjecutarCadaFrame()
+    public override void Update()
     {
         
     }

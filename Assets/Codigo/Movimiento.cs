@@ -5,6 +5,8 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class Movimiento : MonoBehaviour
 {
+    public Personaje personajeRef;
+
     public float rapidez = 5.5f;// Decimales
     public Vector2 direccion;
 

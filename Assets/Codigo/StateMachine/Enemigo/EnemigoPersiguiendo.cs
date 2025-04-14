@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemigoPersiguiendo : Estado
+public class EnemigoPersiguiendo : State
 {
     public EnemigoMovimiento movimiento;
 
@@ -9,11 +9,11 @@ public class EnemigoPersiguiendo : Estado
         this.movimiento = movimiento; // this representa a esta clase, para acceder a variables globales
     }
 
-    public override void EjecutarCadaFrame()
+    public override void Update()
     {
-        if (movimiento.enemigoRef.personajeObjetivo != null)
+        if (movimiento.EnemigoRef.personajeObjetivo != null)
         {
-            Vector3 direccionHaciaJugador = movimiento.enemigoRef.personajeObjetivo.transform.position - movimiento.enemigoRef.transform.position;
+            Vector3 direccionHaciaJugador = movimiento.EnemigoRef.personajeObjetivo.transform.position - movimiento.EnemigoRef.transform.position;
             Vector2 direccionHaciaJugadorNormalizado = direccionHaciaJugador.normalized; // Magnitud 1
 
             movimiento.direccion = direccionHaciaJugadorNormalizado;
