@@ -5,7 +5,7 @@ using UnityEngine.XR;
 
 public class EntradaJugador : MonoBehaviour
 {
-    public PlatformerDynamicController2D movimiento;
+    public PlatformerKinematicController2D movimiento;
 
     void Update()
     {
