@@ -1,17 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class EntradaJugador : MonoBehaviour
 {
-    public Movimiento movimiento;
+    public PlatformerDynamicController2D movimiento;
 
     void Update()
     {
-        movimiento.direccion = LeerTeclado();
+        movimiento.InputDirection = LeerControlHorizontal();
+
+        if (LeerSalto())
+        {
+            movimiento.Dash(movimiento.InputDirection);
+        }
     }
 
-    Vector2 LeerTeclado()
+    Vector2 LeerControlHorizontal()
     {
         // Primera Forma
         //float derecha = Input.GetKey(KeyCode.D);
@@ -24,5 +30,10 @@ public class EntradaJugador : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         return new Vector2(horizontal, vertical);
+    }
+
+    bool LeerSalto()
+    {
+        return Input.GetButtonDown("Jump");
     }
 }

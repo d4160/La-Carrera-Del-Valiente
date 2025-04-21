@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Movimiento de enemigos
-public class EnemigoMovimiento : Movimiento
+public class EnemigoMovimiento : PlatformerKinematicController2D
 {
-    public Enemigo EnemigoRef => personajeRef as Enemigo;
+    //public Enemigo EnemigoRef => personajeRef as Enemigo;
 }

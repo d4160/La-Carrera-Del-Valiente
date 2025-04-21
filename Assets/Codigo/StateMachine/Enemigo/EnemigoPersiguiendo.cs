@@ -11,17 +11,17 @@ public class EnemigoPersiguiendo : State
 
     public override void Update()
     {
-        if (movimiento.EnemigoRef.personajeObjetivo != null)
-        {
-            Vector3 direccionHaciaJugador = movimiento.EnemigoRef.personajeObjetivo.transform.position - movimiento.EnemigoRef.transform.position;
-            Vector2 direccionHaciaJugadorNormalizado = direccionHaciaJugador.normalized; // Magnitud 1
+        //if (movimiento.EnemigoRef.personajeObjetivo != null)
+        //{
+        //    Vector3 direccionHaciaJugador = movimiento.EnemigoRef.personajeObjetivo.transform.position - movimiento.EnemigoRef.transform.position;
+        //    Vector2 direccionHaciaJugadorNormalizado = direccionHaciaJugador.normalized; // Magnitud 1
 
-            movimiento.direccion = direccionHaciaJugadorNormalizado;
-        }
-        else
-        {
-            movimiento.direccion = Vector2.zero;
-        }
+        //    movimiento.direccion = direccionHaciaJugadorNormalizado;
+        //}
+        //else
+        //{
+        //    movimiento.direccion = Vector2.zero;
+        //}
         
     }
 }
