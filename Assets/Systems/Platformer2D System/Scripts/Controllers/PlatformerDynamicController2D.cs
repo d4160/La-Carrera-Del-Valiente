@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(SpriteRenderer))]
+//[RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerDynamicController2D : MonoBehaviour
 {
     [Header("Components")]
@@ -68,7 +67,7 @@ public class PlatformerDynamicController2D : MonoBehaviour
     {
         // Obtener componentes si no están asignados
         if (rb == null) rb = GetComponent<Rigidbody2D>();
-        if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (groundCheckPoint == null)
         {
             // Intentar encontrarlo por nombre, o crear uno si no existe
